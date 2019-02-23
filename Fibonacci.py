@@ -12,14 +12,17 @@ def fib(n):
         return '1'
     else:
         result = [0, 1]
-        while result[len(result)-1] <= n:
-            result.append(result[len(result)-1] + result[len(result)-2])
+        while True:
+            num = result[len(result)-1] + result[len(result)-2]
+            if num > n:
+                break
+            else:
+                result.append(num)
         
         real_result = ''
         for i in result:
             real_result += str(i) + ' '
             
         return real_result
-        
 
             
